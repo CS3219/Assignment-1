@@ -10,11 +10,11 @@ import com.implicit.implicitController;
  */
 public class UI {
     public static void main(String[] args) {
-        Scanner reader = new Scanner(System.in);
+        Scanner scanner = new Scanner(System.in);
         
         System.out.println("Enter 1 to use implicit invocation and 2 to use pipeline: ");
-        int choice = reader.nextInt();
-        reader.close();
+        int choice = scanner.nextInt();
+        scanner.close();
         
         if (choice == 1) {
             implicitController ic = new implicitController();
