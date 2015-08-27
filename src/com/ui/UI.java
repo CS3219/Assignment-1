@@ -1,7 +1,6 @@
 package com.ui;
 
 import java.util.Scanner;
-
 import com.implicit.implicitController;
 
 /**
@@ -19,7 +18,11 @@ public class UI {
         
         if (choice == 1) {
             implicitController ic = new implicitController();
-            ic.initialize();
+            ic.getInput();
+        } else if (choice == 2) {
+            
+        } else {
+            System.out.println("Invalid input");
         }
     }
 }
