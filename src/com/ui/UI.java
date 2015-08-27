@@ -14,7 +14,7 @@ public class UI {
         
         System.out.println("Enter 1 to use implicit invocation and 2 to use pipeline: ");
         int choice = scanner.nextInt();
-        scanner.close();
+        
         
         if (choice == 1) {
             implicitController ic = new implicitController();
@@ -24,5 +24,6 @@ public class UI {
         } else {
             System.out.println("Invalid input");
         }
+        scanner.close();
     }
 }
