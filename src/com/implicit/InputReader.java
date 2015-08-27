@@ -8,15 +8,15 @@ import java.util.Scanner;
  *
  */
 
-public class Input {
+public class InputReader {
     public void getInput(Lines rawData) {
-        Scanner scanner = new Scanner(System.in);
+        Scanner sc = new Scanner(System.in);
         
         System.out.println("Enter words to ignore separated by spaces: ");
-        scanner.nextLine();
-        String wordsToIgnore = scanner.nextLine();
-        scanner.close();
+        String wordsToIgnore = sc.nextLine();
+        System.out.println(wordsToIgnore);
+
         rawData.insertWordsToIgnore(wordsToIgnore);
-        
+        sc.close();
     }
 }
