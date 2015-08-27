@@ -1,6 +1,7 @@
 package com.implicit;
 
 import java.util.ArrayList;
+import java.util.StringTokenizer;
 
 /**
  * Stores and manipulates strings entered.
@@ -8,7 +9,7 @@ import java.util.ArrayList;
  *
  */
 
-public class LineStorage {
+public class Lines {
 
     private ArrayList<String> titles = new ArrayList<String>();
     private ArrayList<String> wordsToIgnore = new ArrayList<String>();
@@ -17,8 +18,12 @@ public class LineStorage {
         titles.add(str);
     }
     
-    public void insertWordToIgnore(String str) {
-        wordsToIgnore.add(str);
+    public void insertWordsToIgnore(String words) {
+        StringTokenizer st = new StringTokenizer(words);
+        
+        while (st.hasMoreTokens()) {
+            wordsToIgnore.add(st.nextToken());
+        }
     }
     
 }
