@@ -1,13 +1,14 @@
 package com.ui;
 
 import java.util.Scanner;
-import com.implicit.implicitController;
+import com.implicit.ImplicitController;
 
 /**
  * Just a rough UI for now so that we can get started.
  * @author Manika Agarwal
  *
  */
+
 public class UI {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
@@ -17,7 +18,7 @@ public class UI {
         
         
         if (choice == 1) {
-            implicitController ic = new implicitController();
+            ImplicitController ic = new ImplicitController();
             ic.getInput();
         } else if (choice == 2) {
             
