@@ -19,7 +19,7 @@ public class UI {
         
         if (choice == 1) {
             ImplicitController ic = new ImplicitController();
-            ic.getInput();
+            ic.initialize();
         } else if (choice == 2) {
             
         } else {

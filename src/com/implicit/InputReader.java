@@ -9,7 +9,7 @@ import java.util.Scanner;
  */
 
 public class InputReader {
-    public void getInput(Lines rawData) {
+    public void getInput(LineStorage rawData) {
         Scanner sc = new Scanner(System.in);
 
         System.out.println("Enter words to ignore separated by spaces: ");
