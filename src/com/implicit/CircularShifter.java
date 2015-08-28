@@ -41,9 +41,7 @@ public class CircularShifter implements Observer{
            if (!linesToShift.getWordsToIgnore().contains(firstWord[0])) {
                linesToShift.addLine(str);
            }
-        }
-        
-        
+        } 
     }
 
     private int getNumberOfWords(String str) {
