@@ -14,14 +14,14 @@ public class InputReader {
 
         System.out.println("Enter words to ignore separated by spaces: ");
         String wordsToIgnore = sc.nextLine();
-        rawData.insertWordsToIgnore(wordsToIgnore);
+        rawData.addWordsToIgnore(wordsToIgnore);
         //System.out.println(wordsToIgnore);
         
         System.out.println("Enter titles (press enter after each title, Ctrl+Z when done): ");
         
         while(sc.hasNextLine()) {
             String title = sc.nextLine();
-            rawData.insertLine(title); 
+            rawData.addLine(title); 
         }
         
         sc.close();

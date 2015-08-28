@@ -16,30 +16,37 @@ public class LineStorage extends Observable{
     private ArrayList<String> wordsToIgnore = new ArrayList<String>();
     private LineStorageEvent event = new LineStorageEvent(); 
     
-    public void insertLine(String str) {
+    public void addLine(String str) {
         titles.add(str.trim());
         event.setLineAdded();
         broadcastEvent();
     }
     
-    public void insertWordsToIgnore(String words) {
+    public void addWordsToIgnore(String words) {
+        insertWordsToIgnore(words);
+        
+        event.setWordsToIgnoreAdded();
+        broadcastEvent();
+    }
+
+    private void insertWordsToIgnore(String words) {
         StringTokenizer st = new StringTokenizer(words);
         
         while (st.hasMoreTokens()) {
             wordsToIgnore.add(st.nextToken());
         }
-        
-        event.setWordsToIgnoreAdded();
-        broadcastEvent();
     }
     
-    public void insertWordsToIgnore(ArrayList<String> words) {
+    public void addWordsToIgnore(ArrayList<String> words) {
         wordsToIgnore = words;
     }
-
-    private void broadcastEvent() {
-        setChanged();
-        notifyObservers(event);
+    
+    public void setAllTitles(ArrayList<String> titles) {
+        this.titles = titles;
+    }
+    
+    public ArrayList<String> getAllTitles() {
+        return titles;
     }
     
     public String getLastTitle() {
@@ -50,4 +57,8 @@ public class LineStorage extends Observable{
         return wordsToIgnore;
     }
 
+    private void broadcastEvent() {
+        setChanged();
+        notifyObservers(event);
+    }
 }
