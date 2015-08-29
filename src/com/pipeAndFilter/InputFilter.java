@@ -1,3 +1,4 @@
+package pipeAndFilter;
 import java.util.*;
 
 //This program is implemented using the Pipe and Filter architecture.

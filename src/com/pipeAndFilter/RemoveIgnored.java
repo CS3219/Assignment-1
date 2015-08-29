@@ -1,3 +1,4 @@
+package pipeAndFilter;
 import java.util.*;
 public class RemoveIgnored {
 	
