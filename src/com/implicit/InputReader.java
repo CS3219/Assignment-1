@@ -9,15 +9,18 @@ import java.util.Scanner;
  */
 
 public class InputReader {
+    private static final String MESSAGE_TITLES = "Enter titles (press enter after each title, Ctrl+Z when done): ";
+    private static final String MESSAGE_WORDS_TO_IGNORE = "Enter words to ignore separated by spaces: ";
+
     public void getInput(LineStorage rawData) {
         Scanner sc = new Scanner(System.in);
 
-        System.out.print("Enter words to ignore separated by spaces: ");
+        System.out.print(MESSAGE_WORDS_TO_IGNORE);
         String wordsToIgnore = sc.nextLine();
         rawData.addWordsToIgnore(wordsToIgnore);
         //System.out.println(wordsToIgnore);
         
-        System.out.println("Enter titles (press enter after each title, Ctrl+Z when done): ");
+        System.out.println(MESSAGE_TITLES);
         
         while(sc.hasNextLine()) {
             String title = sc.nextLine();
