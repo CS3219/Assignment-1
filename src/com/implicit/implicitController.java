@@ -2,7 +2,7 @@ package com.implicit;
 
 public class ImplicitController {
     
-    public void initialize() {
+    public void start() {
         InputReader in = new InputReader();
         
         LineStorage rawData = new LineStorage();

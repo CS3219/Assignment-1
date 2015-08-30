@@ -12,7 +12,7 @@ public class InputReader {
     public void getInput(LineStorage rawData) {
         Scanner sc = new Scanner(System.in);
 
-        System.out.println("Enter words to ignore separated by spaces: ");
+        System.out.print("Enter words to ignore separated by spaces: ");
         String wordsToIgnore = sc.nextLine();
         rawData.addWordsToIgnore(wordsToIgnore);
         //System.out.println(wordsToIgnore);
