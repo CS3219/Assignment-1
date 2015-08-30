@@ -1,7 +1,17 @@
 package com.implicit;
 
+/**
+ * This is the controller of the Implicit Invocation method to solve the 
+ * KWIC problem. 
+ * @author Manika Agarwal
+ *
+ */
+
 public class ImplicitController {
     
+    /**
+     * Instantiates components, gets input and prints output.
+     */
     public void start() {
         InputReader in = new InputReader();
         
