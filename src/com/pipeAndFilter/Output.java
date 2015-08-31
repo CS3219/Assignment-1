@@ -1,4 +1,4 @@
-package pipeAndFilter;
+package com.pipeAndFilter;
 import java.util.*;
 public class Output {
 	
