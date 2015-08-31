@@ -11,8 +11,8 @@ public class Pipe3 {
 	}
 	
 	public void passData() {
-		Alphabetize alphabetizer = new Alphabetize(list, wordsIgnore);
-		alphabetizer.passData();
+		RemoveIgnored removeIgnored = new RemoveIgnored(list, wordsIgnore);
+		removeIgnored.passData();
 	}
 
 }

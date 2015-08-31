@@ -35,7 +35,8 @@ public class RemoveIgnored {
 	
 	public void passData() {
 		removeLines();
-		Pipe3 pipe = new Pipe3(list, wordsRemove);
+		Pipe4 pipe = new Pipe4(list);
 		pipe.passData();
+		
 	}
 }

@@ -36,7 +36,7 @@ public class CircularShift {
 	
 	public void passData() {
 		shift();
-		Pipe2 pipe = new Pipe2(shiftedList,wordsIgnore);
+		Pipe3 pipe = new Pipe3(shiftedList,wordsIgnore);
 		pipe.passData();
 	}
 	

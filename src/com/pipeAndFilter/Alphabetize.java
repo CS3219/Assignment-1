@@ -3,11 +3,9 @@ import java.util.*;
 public class Alphabetize {
 	
 	private ArrayList<String> list;
-	private ArrayList<String> wordsIgnore;
 	
-	public Alphabetize(ArrayList<String> list, ArrayList<String> ignore) {
+	public Alphabetize(ArrayList<String> list) {
 		this.list = list;
-		this.wordsIgnore = ignore;
 	}
 	
 	private void order() {
@@ -16,7 +14,7 @@ public class Alphabetize {
 	
 	public void passData() {
 		order();
-		Pipe4 pipe = new Pipe4(list, wordsIgnore);
+		Pipe5 pipe = new Pipe5(list);
 		pipe.passData();
 	}
 }

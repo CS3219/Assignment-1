@@ -12,7 +12,7 @@ public class Pipe1 {
 	}
 	
 	public void passData() {
-		CircularShift circularshift = new CircularShift(titles, wordsIgnore);
-		circularshift.passData();
+		Capitalize capitalize = new Capitalize(titles, wordsIgnore);
+		capitalize.passData();
 	}
 }
