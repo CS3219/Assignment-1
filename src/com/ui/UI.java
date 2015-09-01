@@ -14,21 +14,20 @@ import com.pipeAndFilter.Input;
 public class UI {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
+
+            System.out.print("Enter 1 to use implicit invocation, 2 to use pipeline: ");
+            int choice = scanner.nextInt();
+
+            if (choice == 1) {
+                ImplicitController ic = new ImplicitController();
+                ic.start();
+            } else if (choice == 2) {
+                Input input = new Input();
+                input.start();
+            } else {
+                System.out.println("Invalid input");
+            }
         
-        System.out.println("Enter 1 to use implicit invocation and 2 to use pipeline: ");
-        int choice = scanner.nextInt();
-        
-        
-        if (choice == 1) {
-            ImplicitController ic = new ImplicitController();
-            ic.start();
-        } else if (choice == 2) {
-        	Input input = new Input();
-        	input.start();
-            
-        } else {
-            System.out.println("Invalid input");
-        }
         scanner.close();
     }
 }
