@@ -30,10 +30,12 @@ public class InputReader {
         System.out.println(MESSAGE_TITLES);
         
         while(sc.hasNextLine()) {
+            System.out.println("yes");
             String title = sc.nextLine();
             rawData.addLine(title); 
+            System.out.println("no");
         }
         
-        sc.close();
+        //sc.close();
     }
 }

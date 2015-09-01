@@ -22,7 +22,7 @@ public class CircularShifter implements Observer{
      * Stores the passed parametres as rawData(unshifted lines) and event. Sends 
      * the event for parsing of event type.  
      * @param arg0  The observed object.
-     * @param arg1  The event which triggerred the broadcast. 
+     * @param arg1  The event which triggered the broadcast. 
      */
     @Override
     public void update(Observable arg0, Object arg1) {
@@ -109,6 +109,7 @@ public class CircularShifter implements Observer{
         int count = 0;
 
         while (st.hasMoreTokens()) {
+            //System.out.println();
             count++;
             st.nextToken();
         }
