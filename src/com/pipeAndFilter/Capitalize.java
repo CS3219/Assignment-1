@@ -2,16 +2,18 @@ package com.pipeAndFilter;
 
 import java.util.ArrayList;
 
-public class Capitalize {
-
+public class Capitalize extends Filter {
+	
 	private ArrayList<String> titles;
 	private ArrayList<String> wordsIgnore;
+	private Data data;
 	
-	public Capitalize(ArrayList<String> titles, ArrayList<String> ignore) {
-		this.titles = titles;
-		this.wordsIgnore = ignore;
+	public Capitalize() {
+		this.titles = new ArrayList<String>();
+		this.wordsIgnore = new ArrayList<String>();
+		data = new Data();
 	}
-	
+
 	private void capitalizeKeywords() {
 		for(int i=0; i<titles.size(); i++) {
 			String line = titles.get(i);
@@ -54,9 +56,13 @@ public class Capitalize {
 		titles.set(index, newLine.trim());
 	}
 	
-	public void passData() {
+	public void execute(Data data) {
+		this.titles = data.getTitles();
+		this.wordsIgnore = data.getIgnore();
 		capitalizeKeywords();
-		Pipe2 pipe = new Pipe2(titles, wordsIgnore);
-		pipe.passData();
+		this.data.setTitles(titles);
+		this.data.setWordsIgnore(wordsIgnore);
+		nextPipe.passData(this.data);
 	}
+
 }

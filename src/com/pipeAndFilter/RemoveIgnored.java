@@ -1,18 +1,20 @@
 package com.pipeAndFilter;
 import java.util.*;
-public class RemoveIgnored {
+public class RemoveIgnored extends Filter {
+		
+	private ArrayList<String> titles;
+	private ArrayList<String> wordsIgnore;
+	private Data data;
 	
-	private ArrayList<String> list;
-	private ArrayList<String> wordsRemove;
-	
-	public RemoveIgnored(ArrayList<String> list, ArrayList<String> words) {
-		this.list = list;
-		this.wordsRemove = words;
+	public RemoveIgnored () {
+		data = new Data();
+		this.titles = new ArrayList<String>();
+		this.wordsIgnore = new ArrayList<String>();
 	}
 	
 	private void removeLines() {
-		for(int i=0; i<list.size(); i++) {
-			String line = list.get(i);
+		for(int i=0; i<titles.size(); i++) {
+			String line = titles.get(i);
 			int index = line.indexOf(" ");
 			String firstWord;
 			if(index == -1) {
@@ -25,18 +27,20 @@ public class RemoveIgnored {
 	}
 	
 	private void checkIgnore(int index, String word) {
-		for(int i=0; i<wordsRemove.size(); i++ ){
-			String ignore = wordsRemove.get(i);
+		for(int i=0; i<wordsIgnore.size(); i++ ){
+			String ignore = wordsIgnore.get(i);
 			if(word.equalsIgnoreCase(ignore)) {
-				list.remove(index);
+				titles.remove(index);
 			}
 		}
 	}
 	
-	public void passData() {
+	public void execute(Data data) {
+		this.titles = data.getTitles();
+		this.wordsIgnore = data.getIgnore();
 		removeLines();
-		Pipe4 pipe = new Pipe4(list);
-		pipe.passData();
-		
+		this.data.setTitles(titles);
+		nextPipe.passData(this.data);
 	}
+	
 }

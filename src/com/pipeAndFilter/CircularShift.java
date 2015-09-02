@@ -1,22 +1,23 @@
 package com.pipeAndFilter;
 import java.util.*;
 
-public class CircularShift {
+public class CircularShift extends Filter {
 	
-	private ArrayList<String> originalList;
 	private ArrayList<String> shiftedList;
+	private ArrayList<String> titles;
 	private ArrayList<String> wordsIgnore;
-
+	private Data data;
 	
-	public CircularShift(ArrayList<String> titles, ArrayList<String> words) {
-		this.originalList = titles;
-		shiftedList = new ArrayList<String>();
-		this.wordsIgnore = words;
+	public CircularShift() {
+		this.titles = new ArrayList<String>();
+		this.wordsIgnore = new ArrayList<String>();
+		this.shiftedList = new ArrayList<String>();
+		data = new Data();
 	}
-	
+
 	private void shift() {
-		for(int i=0; i<originalList.size();i++) {
-			String title = originalList.get(i);
+		for(int i=0; i<titles.size();i++) {
+			String title = titles.get(i);
 			shiftedList.add(title);
 			lineShift(title);
 		}
@@ -34,10 +35,14 @@ public class CircularShift {
 		}
 	}
 	
-	public void passData() {
+	public void execute(Data data) {
+		System.out.println("In circular shift");
+		this.titles = data.getTitles();
+		this.wordsIgnore = data.getIgnore();
 		shift();
-		Pipe3 pipe = new Pipe3(shiftedList,wordsIgnore);
-		pipe.passData();
+		this.data.setTitles(shiftedList);
+		this.data.setWordsIgnore(wordsIgnore);
+		nextPipe.passData(this.data);
 	}
 	
 }
