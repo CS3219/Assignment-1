@@ -4,6 +4,7 @@ import java.util.Scanner;
 
 import com.implicit.ImplicitController;
 import com.pipeAndFilter.Input;
+import com.pipeAndFilter.PipeAndFilterController;
 
 /**
  * Just a rough UI for now so that we can get started.
@@ -22,8 +23,8 @@ public class UI {
                 ImplicitController ic = new ImplicitController();
                 ic.start();
             } else if (choice == 2) {
-                Input input = new Input();
-                input.start();
+                PipeAndFilterController pipeAndFilterController = new PipeAndFilterController();
+                pipeAndFilterController.startExecution();
             } else {
                 System.out.println("Invalid input");
             }
