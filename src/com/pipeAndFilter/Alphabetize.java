@@ -1,20 +1,23 @@
 package com.pipeAndFilter;
 import java.util.*;
-public class Alphabetize {
+public class Alphabetize extends Filter {
 	
-	private ArrayList<String> list;
+	private ArrayList<String> titles;
+	private Data data;
 	
-	public Alphabetize(ArrayList<String> list) {
-		this.list = list;
+	public Alphabetize() {
+		data = new Data();
+		this.titles = new ArrayList<String>();
 	}
 	
 	private void order() {
-		Collections.sort(list);
+		Collections.sort(titles);
 	}
 	
-	public void passData() {
+	public void execute(Data data) {
+		this.titles = data.getTitles();
 		order();
-		Pipe5 pipe = new Pipe5(list);
-		pipe.passData();
+		this.data.setTitles(titles);
+		nextPipe.passData(this.data);
 	}
 }

@@ -3,17 +3,25 @@ package com.pipeAndFilter;
 import java.util.*;
 
 //This program is implemented using the Pipe and Filter architecture.
-public class Input {
+public class Input extends Filter {
 
 	private static final String WELCOME_MESSAGE = "Welcome you are now running KWIC implemented by pipe and filter.";
-	private static final String TITLES_MESSAGE = "Please enter the titles, pressing enter after each title. \nPlease press CTRL-Z when you have finished entering the titles.";
+	private static final String TITLES_MESSAGE = "Please enter the titles, pressing enter after each title. \nPlease press enter twice when you have finished entering the titles.";
 	private static final String IGNORE_MESSAGE = "Please enter words you wish to ignore and separate them by a space:";
 
-	private static Scanner sc = new Scanner(System.in);
-	private static ArrayList<String> titles = new ArrayList<String>();
-	private static ArrayList<String> wordsIgnore = new ArrayList<String>();
-
-	public void start() {
+	private static Scanner sc;
+	private Data data;
+	private ArrayList<String> titles;
+	private ArrayList<String> wordsIgnore;
+	
+	public Input() {
+		data = new Data();
+		this.titles = new ArrayList<String>();
+		this.wordsIgnore = new ArrayList<String>();
+		sc = new Scanner(System.in);
+	}
+	
+	public void execute() {
 		printWelcome();
 		printRequestWordsIgnore();
 		saveIgnore();
@@ -34,21 +42,28 @@ public class Input {
 		System.out.println(IGNORE_MESSAGE);
 	}
 
-	private static void saveTitles() {
-		while (sc.hasNextLine()) {
-			titles.add(sc.nextLine().toLowerCase().trim());
+	private void saveTitles() {
+		String inputLine;
+		while (true) {
+			inputLine = sc.nextLine().toLowerCase().trim();
+			if(inputLine.equals("")) {
+				break;
+			} else {
+			titles.add(inputLine);
+			}
 		}
 	}
 
-	private static void saveIgnore() {
+	private void saveIgnore() {
 		String inputLine = sc.nextLine();
 		String[] words = inputLine.split(" ");
 		for (int i = 0; i < words.length; i++)
 			wordsIgnore.add(words[i]);
 	}
 
-	private static void passToPipe() {
-		Pipe1 pipe = new Pipe1(titles, wordsIgnore);
-		pipe.passData();
+	private void passToPipe() {
+		data.setTitles(titles);
+		data.setWordsIgnore(wordsIgnore);
+		nextPipe.passData(data);
 	}
 }
