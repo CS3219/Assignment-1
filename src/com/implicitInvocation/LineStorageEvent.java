@@ -1,4 +1,4 @@
-package com.implicit;
+package com.implicitInvocation;
 
 /**
  * Event class implements a simple protocol for describing the type of 

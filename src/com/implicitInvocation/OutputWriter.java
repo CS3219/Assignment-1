@@ -1,6 +1,12 @@
-package com.implicit;
+package com.implicitInvocation;
 
 import java.util.ArrayList;
+
+/**
+ * Displays the sorted titles.
+ * @author Manika Agarwal
+ *
+ */
 
 public class OutputWriter {
     
@@ -18,5 +24,6 @@ public class OutputWriter {
         for(int i = 0; i < titles.size(); i++) {   
             System.out.println(titles.get(i));
         } 
+        System.out.println();   
     }
 }

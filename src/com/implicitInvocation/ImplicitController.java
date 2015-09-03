@@ -1,4 +1,4 @@
-package com.implicit;
+package com.implicitInvocation;
 
 /**
  * This is the controller of the Implicit Invocation method to solve the 
