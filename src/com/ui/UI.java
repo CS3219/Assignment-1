@@ -16,8 +16,6 @@ public class UI {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
-        /*System.out.println(System.in.available());
-        while(true) {*/
         System.out.print("Enter 1 to use implicit invocation, 2 to use pipeline: ");
         int choice = scanner.nextInt();
 
@@ -27,13 +25,10 @@ public class UI {
         } else if (choice == 2) {
             Input input = new Input();
             input.start();
-        } //else if (choice == 3) {
-        //break;
-        //        } 
-        else {
+        } else {
             System.out.println("Invalid input");
         }
-        //  }
+  
         scanner.close();
     }
 }
