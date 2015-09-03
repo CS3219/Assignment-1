@@ -109,7 +109,6 @@ public class CircularShifter implements Observer{
         int count = 0;
 
         while (st.hasMoreTokens()) {
-            //System.out.println();
             count++;
             st.nextToken();
         }

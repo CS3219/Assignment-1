@@ -97,7 +97,7 @@ public class LineStorage extends Observable{
     }
     
     /**
-     * Broadcast event.
+     * Broadcasts event.
      */
     private void broadcastEvent() {
         setChanged();

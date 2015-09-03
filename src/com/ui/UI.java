@@ -6,7 +6,7 @@ import com.implicitInvocation.ImplicitController;
 import com.pipeAndFilter.PipeAndFilterController;
 
 /**
- * Just a rough UI for now so that we can get started.
+ * Asks user to choose which architecture he wants to use.
  * @author Manika Agarwal
  *
  */
